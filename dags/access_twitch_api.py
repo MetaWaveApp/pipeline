@@ -85,6 +85,8 @@ def calcularProximaPagina(maiorStream, menorStream, media):
         log = "Usou a média em: "+ str(maiorStream['viewer_count'])+" e "+str(menorStream['viewer_count'])
         print(log)
         logging.info(log)
+    else:
+        logging.info("Não calculou pela media. Pegou todos os espectadores.")
     return calc
 
 
@@ -137,6 +139,7 @@ def addViewersInGame(game, session):
         break 
     
     game['totalViews'] = totalViews
+    logging.info(game['name']+" - total: "+str(totalViews))
 
 
 
